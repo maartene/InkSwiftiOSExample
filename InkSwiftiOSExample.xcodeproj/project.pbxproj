@@ -11,6 +11,9 @@
 		DE83AFE32AACF81C009B2449 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE83AFE22AACF81C009B2449 /* ContentView.swift */; };
 		DE83AFE52AACF81F009B2449 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE83AFE42AACF81F009B2449 /* Assets.xcassets */; };
 		DE83AFE82AACF81F009B2449 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE83AFE72AACF81F009B2449 /* Preview Assets.xcassets */; };
+		DE83AFF02AACF84C009B2449 /* InkSwift in Frameworks */ = {isa = PBXBuildFile; productRef = DE83AFEF2AACF84C009B2449 /* InkSwift */; };
+		DE83AFF22AACF95C009B2449 /* test.ink.json in Resources */ = {isa = PBXBuildFile; fileRef = DE83AFF12AACF95C009B2449 /* test.ink.json */; };
+		DE83AFF42AACF967009B2449 /* test.ink in Resources */ = {isa = PBXBuildFile; fileRef = DE83AFF32AACF966009B2449 /* test.ink */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +22,8 @@
 		DE83AFE22AACF81C009B2449 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		DE83AFE42AACF81F009B2449 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DE83AFE72AACF81F009B2449 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		DE83AFF12AACF95C009B2449 /* test.ink.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = test.ink.json; sourceTree = "<group>"; };
+		DE83AFF32AACF966009B2449 /* test.ink */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = test.ink; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -26,6 +31,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE83AFF02AACF84C009B2449 /* InkSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -51,6 +57,8 @@
 		DE83AFDF2AACF81C009B2449 /* InkSwiftiOSExample */ = {
 			isa = PBXGroup;
 			children = (
+				DE83AFF32AACF966009B2449 /* test.ink */,
+				DE83AFF12AACF95C009B2449 /* test.ink.json */,
 				DE83AFE02AACF81C009B2449 /* InkSwiftiOSExampleApp.swift */,
 				DE83AFE22AACF81C009B2449 /* ContentView.swift */,
 				DE83AFE42AACF81F009B2449 /* Assets.xcassets */,
@@ -83,6 +91,9 @@
 			dependencies = (
 			);
 			name = InkSwiftiOSExample;
+			packageProductDependencies = (
+				DE83AFEF2AACF84C009B2449 /* InkSwift */,
+			);
 			productName = InkSwiftiOSExample;
 			productReference = DE83AFDD2AACF81C009B2449 /* InkSwiftiOSExample.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +122,9 @@
 				Base,
 			);
 			mainGroup = DE83AFD42AACF81C009B2449;
+			packageReferences = (
+				DE83AFEE2AACF84C009B2449 /* XCRemoteSwiftPackageReference "InkSwift" */,
+			);
 			productRefGroup = DE83AFDE2AACF81C009B2449 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -125,8 +139,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE83AFF42AACF967009B2449 /* test.ink in Resources */,
 				DE83AFE82AACF81F009B2449 /* Preview Assets.xcassets in Resources */,
 				DE83AFE52AACF81F009B2449 /* Assets.xcassets in Resources */,
+				DE83AFF22AACF95C009B2449 /* test.ink.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -339,6 +355,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		DE83AFEE2AACF84C009B2449 /* XCRemoteSwiftPackageReference "InkSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/maartene/InkSwift.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		DE83AFEF2AACF84C009B2449 /* InkSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DE83AFEE2AACF84C009B2449 /* XCRemoteSwiftPackageReference "InkSwift" */;
+			productName = InkSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = DE83AFD52AACF81C009B2449 /* Project object */;
 }

@@ -6,16 +6,40 @@
 //
 
 import SwiftUI
+import InkSwift
 
 struct ContentView: View {
+    @StateObject var story = InkStory()
+    
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+            Text(story.currentText)
+            if story.canContinue {
+                Button("Continue") {
+                    story.continueStory()
+                }
+            }
+            ForEach(story.options, id: \.index) { option in
+                Button(option.text) {
+                    story.chooseChoiceIndex(option.index)
+                }
+            }
+        }.padding()
+        .onAppear {
+            loadStory()
         }
-        .padding()
+    }
+    
+    func loadStory() {
+        guard let url = Bundle.main.url(forResource: "test.ink", withExtension: "json") else {
+            fatalError("Could not find ink story file.")
+        }
+
+        guard let storyJSON = try? String(contentsOf: url) else {
+            fatalError("Could not load story file.")
+        }
+
+        story.loadStory(json: storyJSON)
     }
 }
 
